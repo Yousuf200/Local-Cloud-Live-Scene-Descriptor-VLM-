@@ -1,23 +1,23 @@
-# Local-Cloud Live Scene Descriptor (VLM)
+# Accessibility-Focused Local-Cloud Live Scene Descriptor (VLM)
 
-An automated scene description tool that hooks into a webcam stream (supporting external USB cameras) and utilizes a Vision-Language Model (VLM) to analyze and describe physical environments in real time. 
+An automated assistive tool designed for users with visual impairments. It captures live video streams from external USB webcams and utilizes a Vision-Language Model (VLM) to analyze physical environments, printing textual scene descriptions and reading them aloud via text-to-speech (TTS) in near real time.
 
-By leveraging Google Colab's free T4 GPU backend alongside an active Ollama instance, this project processes live visual frames in roughly 1 to 1.5 seconds, avoiding local laptop CPU overhead.
+By combining Google Colab's cloud T4 GPU backend for image evaluation and the HTML5 Speech Synthesis Web API for audio presentation, this project operates smoothly without requiring a high-end local GPU.
 
 ## 🚀 Features
-- **Real-Time Sampling:** Automatically intercepts live browser-based webcam frames every 10 seconds.
-- **External Camera Support:** JavaScript hardware scanning dynamically binds to external USB webcams over integrated laptop cameras.
-- **T4 GPU Accelerated:** Offloads heavy matrix calculations to a cloud GPU for near-instant text generation.
-- **Efficient VLM Stack:** Uses `qwen3.5:2b` for lightweight, context-aware, concise scene descriptions.
+- **Real-Time Assistive Audio:** Automatically outputs clean text-to-speech audio updates summarizing changes in the physical environment.
+- **External Camera Priority:** Built-in JavaScript device scanner automatically searches for and locks onto external USB webcams.
+- **Optimized Latency:** Utilizes `qwen3.5:2b` to generate ultra-fast, descriptive, context-aware 1-sentence summaries in ~1.2 seconds.
+- **Zero Overhead on Laptop:** Offloads intensive AI inference steps safely to a cloud T4 engine.
 
 ---
 
 ## 🛠️ Setup & Execution Instructions
 
-This project is fully optimized to run within **Google Colab** to make use of free GPU acceleration.
+This repository runs efficiently directly within web browser instances via **Google Colab**.
 
 ### 1. Environment Initialization
-Open a new notebook in Google Colab, change your runtime type to **T4 GPU**, and run the environment initialization cell:
+Open a new notebook in Google Colab, shift your hardware runtime type to **T4 GPU**, and execute the environment configuration block:
 
 ```python
 # Install backend dependencies and pull the lightweight vision model
